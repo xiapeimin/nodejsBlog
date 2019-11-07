@@ -69,7 +69,7 @@ app.post('/check',function(req,res) {
         res.write('ok');
         res.end();
         i = users.length;
-      }else if(i == users.length-1 && username != users[i].username && pwd != users[i].password){
+      }else if(i == users.length-1 && (username != users[i].username || pwd != users[i].password)){
         res.write('no');
         res.end();
       }
